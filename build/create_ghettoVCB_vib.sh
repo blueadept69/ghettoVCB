@@ -85,13 +85,16 @@ __GHETTOVCB__
 # Create ghettoVCB bin/conf directories
 GVCB_BIN_DIR=${VIB_PAYLOAD_DIR}/opt/ghettovcb/bin
 GVCB_CONF_DIR=${VIB_PAYLOAD_DIR}/opt/ghettovcb
+ESXI_FW_DIR=${VIB_PAYLOAD_DIR}/etc/vmware/firewall
 mkdir -p ${GVCB_BIN_DIR}
 mkdir -p ${GVCB_CONF_DIR}
+mkdir -p ${ESXI_FW_DIR}
 
 # Copy ghettoVCB files to bin/conf directories
 cp ${GVCB_REPO_DIR}/*.sh ${GVCB_BIN_DIR}
 cp ${GVCB_REPO_DIR}/*.conf ${GVCB_CONF_DIR}
 cp ${GVCB_REPO_DIR}/*_template ${GVCB_CONF_DIR}
+cp ${GVCB_REPO_DIR}/email.xml ${ESXI_FW_DIR}
 
 # Ensure config files are writable
 chmod -R +tw ${GVCB_CONF_DIR}
